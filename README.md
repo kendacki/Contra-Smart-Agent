@@ -1,11 +1,9 @@
-# Contra Smart Agent (Gold Edition) 🤖✨
+# Contra Smart Agent (Gold Edition) 🤖
 
 A premium Chrome Extension designed to help freelancers on [Contra.com](https://contra.com) land jobs faster. 
 
 This agent uses **Google Gemini AI** to scan job posts and automatically generate **friendly, human-like, and punchy (under 70 chars)** replies instantly. It features a sleek **Dark Mode & Gold UI** for a premium experience.
 
-![Extension Preview](https://via.placeholder.com/600x300?text=Contra+Smart+Agent+Preview) 
-*(Add a screenshot of your extension here if you like!)*
 
 ## 🌟 Features
 
@@ -64,4 +62,5 @@ Since this is a custom developer tool, you will install it using Chrome's "Devel
 This project is open-source. Feel free to modify the `popup.js` prompt to change the personality or character limit!
 
 ---
+
 *Built with ❤️ for the Freelance Community.*
