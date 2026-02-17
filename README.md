@@ -1,15 +1,15 @@
 # Contra Smart Agent (Gold Edition) 🤖
 
-A premium Chrome Extension designed to help freelancers on [Contra.com](https://contra.com) land jobs faster. 
+A premium Chrome Extension designed to help freelancers on [Contra.com](https://contra.com) reply to posts faster and more intellgently. 
 
-This agent uses **Google Gemini AI** to scan job posts and automatically generate **friendly, human-like, and punchy (under 70 chars)** replies instantly. It features a sleek **Dark Mode & Gold UI** for a premium experience.
+This agent uses **Google Gemini AI** to scan contra posts and automatically generate **friendly, human-like, and punchy (under 150 chars)** replies instantly. It features a sleek **Dark Mode & Gold UI** for a premium experience.
 
 
 ## 🌟 Features
 
-* **Smart Context Scanning:** Highlights job posts to understand exactly what the client needs.
+* **Smart Context Scanning:** Highlights users posts to understand exactly what the respondent needs to reply with.
 * **Human-Like AI:** Generates casual, friendly, lower-case replies that sound like a real person, not a robot.
-* **Strict Character Limit:** Enforces a ~70 character limit for punchy, DM-style pitches.
+* **Strict Character Limit:** Enforces a ~150 character limit for punchy, DM-style pitches.
 * **Premium UI:** Deep charcoal background with luxurious Gold gradients.
 * **Model Auto-Switching:** Automatically finds the best available Google Gemini model (Flash/Pro) for your key.
 
@@ -39,10 +39,10 @@ Since this is a custom developer tool, you will install it using Chrome's "Devel
 
 ## 💡 How to Use
 
-1.  **Navigate:** Go to [Contra.com](https://contra.com) and find a job post or feed item.
+1.  **Navigate:** Go to [Contra.com](https://contra.com) and find a related user post or feed item.
 2.  **Highlight:** Use your mouse to **highlight the text** of the job description you want to reply to.
 3.  **Open:** Click the **Contra Agent Icon** (Gold/Black icon) in your toolbar.
-4.  **Setup (First Time Only):** Paste your **Gemini API Key** into the input box.
+4.  **Setup (First Time Only):** Paste your **Gemini API Key** into the input box, once done, there will be no need to re-do in the future.
 5.  **Generate:** Click the **"GENERATE REPLY"** button.
 6.  **Send:** Copy the generated text and paste it into the Contra message box!
 
@@ -64,3 +64,4 @@ This project is open-source. Feel free to modify the `popup.js` prompt to change
 ---
 
 *Built with ❤️ for the Freelance Community.*
+
