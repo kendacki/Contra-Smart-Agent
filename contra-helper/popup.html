@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contra Agent Gold</title>
+  <style>
+    /* --- RESET & BASICS --- */
+    * { box-sizing: border-box; user-select: none; }
+    
+    html, body {
+      width: 320px;
+      height: 520px;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: #050505;
+      color: #fff;
+      overflow: hidden; 
+    }
+
+    /* --- BACKGROUND --- */
+    .orb-1 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, rgba(0,0,0,0) 70%);
+      top: -50px; left: -50px; z-index: 0; pointer-events: none; 
+    }
+    .orb-2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, rgba(0,0,0,0) 70%);
+      bottom: -20px; right: -20px; z-index: 0; pointer-events: none;
+    }
+
+    .container {
+      position: relative; z-index: 10; padding: 20px; height: 100%;
+      display: flex; flex-direction: column;
+      backdrop-filter: blur(5px); background: rgba(255, 255, 255, 0.01);
+    }
+
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    h1 { font-size: 16px; font-weight: 700; margin: 0; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; }
+
+    .status-dot { width: 8px; height: 8px; background: #333; border-radius: 50%; }
+    .status-dot.active { background: #00ff88; box-shadow: 0 0 8px #00ff88; }
+    .status-dot.error { background: #ff4444; box-shadow: 0 0 8px #ff4444; }
+
+    /* --- INPUTS --- */
+    input, select {
+      width: 100%; padding: 12px; background: rgba(20, 20, 20, 0.8);
+      border: 1px solid #333; border-radius: 8px; color: #fff; font-size: 12px; margin-bottom: 10px; outline: none;
+    }
+    input:focus, select:focus { border-color: #FFD700; }
+
+    /* --- GENERATE BUTTON --- */
+    .btn-main {
+      width: 100%; padding: 12px;
+      background: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+      border: none; border-radius: 8px; color: #000; font-weight: 800; font-size: 12px;
+      cursor: pointer; text-transform: uppercase; margin-bottom: 10px;
+      transition: opacity 0.2s;
+    }
+    .btn-main:hover { opacity: 0.9; }
+
+    /* --- ACTION BUTTONS (Hidden by default) --- */
+    .action-group { display: none; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+    
+    .btn-copy {
+      width: 100%; padding: 10px; background: #222; border: 1px solid #444;
+      border-radius: 8px; color: #fff; font-weight: 600; cursor: pointer;
+    }
+    .btn-copy:hover { background: #333; border-color: #fff; }
+
+    .btn-insert {
+      width: 100%; padding: 10px; background: rgba(0, 255, 136, 0.1); 
+      border: 1px solid #00ff88; border-radius: 8px; color: #00ff88; font-weight: 600; cursor: pointer;
+    }
+    .btn-insert:hover { background: rgba(0, 255, 136, 0.2); }
+
+    .btn-reset {
+      font-size: 10px; color: #777; background: none; border: none; cursor: pointer; text-align: center; width: 100%; margin-top: 5px; text-decoration: underline;
+    }
+    .btn-reset:hover { color: #aaa; }
+
+    textarea {
+      flex-grow: 1; width: 100%; background: #111; border: 1px solid #333;
+      border-radius: 8px; padding: 10px; color: #ddd; font-family: monospace; font-size: 12px; resize: none; outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="orb-1"></div>
+  <div class="orb-2"></div>
+  <div class="container">
+    <header>
+      <h1>CONTRA AGENT V3</h1>
+      <div class="status-dot" id="statusDot"></div>
+    </header>
+
+    <div id="setup-section">
+      <input type="password" id="apiKey" placeholder="Paste Gemini API Key...">
+      <select id="toneSelector">
+        <option value="Casual">✨ Vibe: Casual</option>
+        <option value="Professional">💼 Vibe: Professional</option>
+        <option value="Direct">🚀 Vibe: Direct</option>
+      </select>
+    </div>
+
+    <button id="scanBtn" class="btn-main">GENERATE REPLY</button>
+    
+    <div id="actionButtons" class="action-group">
+      <button id="copyBtn" class="btn-copy">📋 COPY TEXT</button>
+      <button id="insertBtn" class="btn-insert">👻 INSERT INTO PAGE</button>
+      <button id="resetBtn" class="btn-reset">Start Over</button>
+    </div>
+    
+    <textarea id="output" placeholder="Highlight text on page..."></textarea>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
